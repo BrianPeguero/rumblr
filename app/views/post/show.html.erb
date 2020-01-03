@@ -1,0 +1,11 @@
+<h1>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</h1>
+ 
+<h3>
+  <strong>Text:</strong>
+  <%= @post.body %>
+</h3>
+
+<%= link_to "dashboard", {controller: "user", action: "index"} %>

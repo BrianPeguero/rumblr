@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LoginPrac</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="nav-bar">
+      <div class="nav-bar-logo">
+        <%= link_to "Logo", root_path, class: "logo" %>
+      </div>
+      <div class="nav-bar-links">
+        <%= link_to "Home", root_path, class: "link" %>
+        <%= link_to "Contact Us", {controller: "welcome", action: "contactUs"}, class: "link" %>
+        <%= link_to "About Us", {controller: "welcome", action: "aboutUs"}, class: "link" %>
+        <% if session[:user_id].nil? %>
+          <div class="sign-in-options">
+            <%= link_to "Log In", {controller: "login", action: "index"}, class: "btn" %>
+            <%= link_to "Sign Up", {controller: "signup", action: "index"}, class: "btn blue last-btn" %>
+          </div>
+        <% else %>
+          <%= link_to "log Out", {controller: "user", action: "logout"}, class: "btn-logout last-btn" %>
+        <% end %>
+      </div>
+    </nav>
+    
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<h1>Welcome <%= session[:user_id] %></h1>
+
+<%= link_to "New Post", {controller: "post", action:"new"} %>
+
+<% @posts.each do |post| %>
+    <h3><%= post.title %></h3>
+    <h6><%= post.body %></h6>
+    <%= link_to "Show", post_path(post) %>
+<% end %>

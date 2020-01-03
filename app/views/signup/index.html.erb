@@ -1,0 +1,9 @@
+<h1>sign up</h1>
+
+<%= form_for(:user, url: {controller: "signup", action: "create"}) do |f| %>
+    <%= f.text_field :email, placeholder: "Email" %> <br>
+    <%= f.password_field :password, placeholder: "Password" %> <br>
+    <%= f.text_field :name, placeholder: "name" %> <br>
+    <%= f.text_field :birthday, placeholder: "birthday" %> <br>
+    <%= f.submit :Signup %>
+<% end %>
