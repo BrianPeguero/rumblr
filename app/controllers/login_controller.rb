@@ -11,12 +11,14 @@ class LoginController < ApplicationController
     end
 
     def create
+        @user = User.new(login_params)
+        pp @user
 
         @user = User.find_by(email: "#{params[:user][:email]}")
         
         if @user != nil
             #if @user.password == params[:user][:password]
-            if @user.password == @loggingin.password
+            if @user.password == params[:user][:password]
                 session[:user_id] = @user.id
                 redirect_to :controller => "user", :action => "index"
             end
@@ -28,6 +30,6 @@ class LoginController < ApplicationController
 
     private
         def login_params
-            params.require(:login).permit(:email, :password)
+            params.require(:user).permit(:email, :password)
         end
 end
