@@ -11,11 +11,12 @@ class LoginController < ApplicationController
     end
 
     def create
-        @user = User.new(login_params)
-        pp @user
+        @login  = Login.new(login_params)
+        pp @login
 
         @user = User.find_by(email: "#{params[:user][:email]}")
-        
+        pp @user
+
         if @user != nil
             #if @user.password == params[:user][:password]
             if @user.password == params[:user][:password]
@@ -23,6 +24,15 @@ class LoginController < ApplicationController
                 redirect_to :controller => "user", :action => "index"
             end
         else
+            if params[:user][:email] == ""
+                @error = "username can not be blank"
+            elsif params[:user][:password] == ""
+                @error = "password  can not be blank"
+            elsif params[:user][:password] == "" and params[:user][:password] == ""
+                @error = "username and password can not be blank"
+            elsif @user == nil
+                @error = "could not find you in our records try again"
+            end
             render "new"
         end
 
