@@ -1,6 +1,6 @@
 <div class="main-container blue">
     <div class="container">
-        <h1 class="main-container-title">Welcome <%= @username %></h1>
+        <h1 class="main-container-title">Welcome <%= @user.name %></h1>
 
         <%= link_to "New Post", {controller: "post", action:"new"} %>
         
