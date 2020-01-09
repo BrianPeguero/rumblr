@@ -1,11 +1,13 @@
-<div class="main-container blue">
-  <div class="container">
-    <div class="post-container">
-      <h1><%= @post.title %></h1>
-      <hr>
-      <h3><%= @post.body %></h3>
+<div class="main-container img">
+  <div class="overlay">
+    <div class="container">
+      <div class="post-container">
+        <h1><%= @post.title %></h1>
+        <hr>
+        <h3><%= @post.body %></h3>
 
-      <%= link_to "dashboard", {controller: "user", action: "index"} %>
+        <%= link_to "dashboard", {controller: "user", action: "index"} %>
+      </div>
     </div>
   </div>
 </div>

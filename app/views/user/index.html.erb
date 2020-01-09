@@ -1,30 +1,26 @@
-<div class="main-container blue">
-
-    <%= link_to "+", {controller: "post", action:"new"}, id: "new-post" %>
-
-    <div class="container">
+<div class="main-container img">
+    <div class="overlay">
         
-        <div class="profile-container">
-            <% if @user.profile_pic.attached? %>
-                <%= image_tag @user.profile_pic, class: "profile-pic" %>
-            <% end %>
-            <h1 class="main-container-title">Welcome <%= @user.name %></h1>
-        </div>
-        
-        <div class="posts-container">
-            <% if @posts == [] %>
-                <div class="post-container">
-                    <h3>Lets get started add click the + button on the bottom right to make your first post!</h3>
-                </div>
-            <% else %>
+    </div>
+</div>
+
+<%= link_to "+", {controller: "post", action:"new"}, id: "new-post" %>
+
+        <div class="container">
+            
+            <div class="profile-container">
+                <% if @user.profile_pic.attached? %>
+                    <%= image_tag @user.profile_pic, class: "profile-pic" %>
+                <% end %>
+                <h1 class="main-container-title">Welcome <%= @user.name %></h1>
+            </div>
+            
+            <div class="posts-container">
                 <% @posts.each do |post| %>
                     <div class="post-container">
                         <h1 class="post-title"><%= link_to post.title, post_path(post), class: "post-title" %></h1>
-                        <hr>
                         <h3 class="post-body"><%= post.body %></h3>
                     </div>
                 <% end %>
-            <% end %>
+            </div>
         </div>
-    </div>
-</div>

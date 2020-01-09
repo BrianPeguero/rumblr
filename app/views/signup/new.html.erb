@@ -1,42 +1,46 @@
 <% if @user.errors.any? %>
   
-  <div class="main-container blue">
-    <div class="form-container">
-      <h1 class="form-title">Sign Up</h1>
+  <div class="main-container img">
+    <div class="overlay">
+      <div class="form-container">
+        <h1 class="form-title">Sign Up</h1>
 
-      <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
 
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <%= form_for(:user, url: {controller: "signup", action: "create"}) do |f| %>
+            <%= f.text_field :email, placeholder: "Email", class: "input-field" %> <br>
+            <%= f.password_field :password, placeholder: "Password", class: "input-field" %> <br>
+            <%= f.text_field :name, placeholder: "Name", class: "input-field" %> <br>
+            <%= f.text_field :birthday, placeholder: "Birthday", class: "input-field" %> <br>
+            <%= f.submit :Signup, class: "submit-btn" %>
+        <% end %>
       </div>
-
-      <%= form_for(:user, url: {controller: "signup", action: "create"}) do |f| %>
-          <%= f.text_field :email, placeholder: "Email", class: "input-field" %> <br>
-          <%= f.password_field :password, placeholder: "Password", class: "input-field" %> <br>
-          <%= f.text_field :name, placeholder: "Name", class: "input-field" %> <br>
-          <%= f.text_field :birthday, placeholder: "Birthday", class: "input-field" %> <br>
-          <%= f.submit :Signup, class: "submit-btn" %>
-      <% end %>
     </div>
   </div>
 
 
 <% else %>
-  <div class="main-container blue">
-    <div class="form-container">
-      <h1 class="form-title">Sign Up</h1>
+  <div class="main-container img">
+    <div class="overlay">
+      <div class="form-container">
+        <h1 class="form-title">Sign Up</h1>
 
-      <%= form_for(:user, url: {controller: "signup", action: "create"}) do |f| %>
-          <%= f.text_field :email, placeholder: "Email", class: "input-field" %> <br>
-          <%= f.password_field :password, placeholder: "Password", class: "input-field" %> <br>
-          <%= f.text_field :name, placeholder: "Name", class: "input-field" %> <br>
-          <%= f.text_field :birthday, placeholder: "Birthday", class: "input-field" %> <br>
-          <%= f.submit :Signup, class: "submit-btn" %>
-      <% end %>
+        <%= form_for(:user, url: {controller: "signup", action: "create"}) do |f| %>
+            <%= f.text_field :email, placeholder: "Email", class: "input-field" %> <br>
+            <%= f.password_field :password, placeholder: "Password", class: "input-field" %> <br>
+            <%= f.text_field :name, placeholder: "Name", class: "input-field" %> <br>
+            <%= f.text_field :birthday, placeholder: "Birthday", class: "input-field" %> <br>
+            <%= f.submit :Signup, class: "submit-btn" %>
+        <% end %>
+      </div>
     </div>
   </div>
 <% end %>
