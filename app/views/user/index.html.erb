@@ -1,15 +1,18 @@
 <div class="main-container blue">
     <div class="container">
         <h1 class="main-container-title">Welcome <%= @user.name %></h1>
-
-        <%= link_to "+", {controller: "post", action:"new"}, id: "new-post" %>
         
-        <% @posts.each do |post| %>
-            <div class="post-container">
-                <h1 class="post-title"><%= link_to post.title, post_path(post), class: "post-title" %></h1>
-                <hr>
-                <h3 class="post-body"><%= post.body %></h3>
-            </div>
-        <% end %>
+        <div class="posts-container">
+
+            <%= link_to "+", {controller: "post", action:"new"}, id: "new-post" %>
+            
+            <% @posts.each do |post| %>
+                <div class="post-container">
+                    <h1 class="post-title"><%= link_to post.title, post_path(post), class: "post-title" %></h1>
+                    <hr>
+                    <h3 class="post-body"><%= post.body %></h3>
+                </div>
+            <% end %>
+        </div>
     </div>
 </div>
