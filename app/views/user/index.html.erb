@@ -18,6 +18,13 @@
             <div class="posts-container">
                 <% @posts.each do |post| %>
                     <div class="post-container">
+                        <div class="user-info">
+                            <% if post.user.profile_pic.attached? %>
+                                <%= image_tag post.user.profile_pic, class: "profile-pic" %>
+                            <% end %>
+                                <p><%= post.user.name %></p>
+                        </div>
+                        <hr>
                         <h1 class="post-title"><%= link_to post.title, post_path(post), class: "post-title" %></h1>
                         <h3 class="post-body"><%= post.body %></h3>
                     </div>
