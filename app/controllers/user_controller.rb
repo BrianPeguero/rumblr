@@ -2,7 +2,6 @@ class UserController < ApplicationController
 
     def index
         @user = User.find(session[:user_id])
-        @username = @user.name
         @posts = @user.post
     end
 
