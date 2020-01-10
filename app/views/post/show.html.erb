@@ -6,7 +6,7 @@
           <% if @post.user.profile_pic.attached? %>
               <%= image_tag @post.user.profile_pic, class: "user-pic" %>
           <% end %>
-              <p class="user-name"><%= @post.user.name %></p>
+              <%= link_to @post.user.name, user_path(@post.user), class: "user-name" %>
         </div>
         <hr>
         <h1><%= @post.title %></h1>
@@ -15,3 +15,5 @@
     </div>
   </div>
 </div>
+
+<%= link_to "+", {controller: "post", action:"new"}, id: "new-post" %>

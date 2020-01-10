@@ -1,6 +1,6 @@
 <% if @post.errors.any? %>
   <div class="main-container img">
-    <div class="form-container">
+    <div class="form-container" style="padding: 5% 0%;">
 
         <h1 class="form-title">New Post</h1>
 
@@ -9,7 +9,7 @@
       
           <ul>
           <% @post.errors.full_messages.each do |msg| %>
-            <p><%= msg %></p>
+            <p class="error"><%= msg %></p>
           <% end %>
           </ul>
         </div>
@@ -34,3 +34,5 @@
     </div>
 </div>
 <% end %>
+
+<%= link_to "+", {controller: "post", action:"new"}, id: "new-post" %>

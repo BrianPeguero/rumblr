@@ -22,7 +22,7 @@
                             <% if post.user.profile_pic.attached? %>
                                 <%= image_tag post.user.profile_pic, class: "user-pic" %>
                             <% end %>
-                                <p class="user-name"><%= link_to post.user.name, user_path(post.user) %></p>
+                                <%= link_to post.user.name, user_path(post.user), class: "user-name" %>
                         </div>
                         <hr>
                         <h2 class="post-title"><%= link_to post.title, post_path(post), class: "post-title" %></h2>

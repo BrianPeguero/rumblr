@@ -6,7 +6,7 @@
           <div id="error_explanation">
             <h2>prohibited this article from being saved:</h2>
 
-            <%= @error %>
+            <p class="error"><%= @error %><p>
           </div>
         <% end %>
         <%= form_for(:user, url: {controller: "login", action: "create"}) do |f| %>
