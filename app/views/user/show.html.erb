@@ -12,7 +12,7 @@
                 <% if @user.profile_pic.attached? %>
                     <%= image_tag @user.profile_pic, class: "profile-pic" %>
                 <% end %>
-                <h1 class="main-container-title">Welcome <%= @user.name %></h1>
+                <h1 class="main-container-other-user-title">Welcome to <%= @user.name %>'s page</h1>
             </div>
             
             <div class="posts-container">

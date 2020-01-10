@@ -23,14 +23,10 @@ class UserController < ApplicationController
     end
 
     def show
-        session[:user_id] = nil
-        redirect_to :controller => "welcome", :action => "index"
-    end
+        @user = User.find(params[:id])
 
-    def logout
-        session[:user_id] = nil
-        redirect_to :controller => "welcome", :action => "index"
-    end 
+        @posts = @user.post
+    end
 
     private
         def post_params

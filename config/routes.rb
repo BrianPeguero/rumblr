@@ -14,11 +14,11 @@ Rails.application.routes.draw do
   #signup routes and resources
   resources :signup
 
+  #logout routes and resources
+  resources :logout
+
   #user routes and resources
   resources :user
-  #route for logging out
-  get "user/logout"
-
 
   #post routes and resources
   resources :post

@@ -186,6 +186,10 @@ nav {
 main{    
     min-height: 100vh;
     width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .jumbotron {
@@ -263,7 +267,7 @@ main{
     width: 40%;
 
     padding: 3% 0%;
-    margin: 0%;
+    margin: 11% 0%;
 
     text-align: center;
 
@@ -271,6 +275,8 @@ main{
 
     border-radius: 15px;
     box-shadow: 3px 3px 15px rgba(0, 0, 0, .6);
+
+    position: absolute;
 }
 
 .form-title {
@@ -334,7 +340,7 @@ main{
 
 .posts-container {
     height: auto;
-    width: 100%;
+    max-width: 100%;
 
     display: flex;
     flex-wrap: wrap;
@@ -344,14 +350,21 @@ main{
     height: auto;
     width: auto;
 
-    font-size: 5em;
+    padding: 0;
+    margin: 5% 0%;
+
+    font-size: 6em;
+
+    line-height: .1;
 
     color: whitesmoke;
+
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, .6);
 }
 
 .post-container {
     height: auto;
-    width: fit-content;
+    max-width: 33%;
 
     padding: 2% 3%;
     margin: 3% 3%;
@@ -360,6 +373,34 @@ main{
 
     border-radius: 15px;
     box-shadow: 3px 3px 15px rgba(0, 0, 0, .6);
+}
+
+.user-info {
+    display: flex;
+
+    align-items: center;
+}
+
+.user-pic {
+    width: auto;
+    height: 33px;
+
+    padding: 0%;
+    margin: 0%;
+
+    border-radius: 50%;
+
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .6);
+}
+
+.user-name {
+    height: auto;
+    width: auto;
+
+    padding: 0%;
+    margin: 0% 7%;
+
+    font-weight: bold;
 }
 
 .post-title {
@@ -419,4 +460,36 @@ main{
     border-radius: 50%;
 
     box-shadow: 3px 3px 15px rgba(0, 0, 0, .6);
+}
+
+.error {
+    line-height: .1;
+
+    color: red;
+}
+
+.single-post-container {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container-other-user-title {
+    height: auto;
+    width: auto;
+
+    padding: 0;
+    margin: 5% 0%;
+
+    font-size: 3em;
+
+    line-height: .1;
+
+    color: whitesmoke;
+
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, .6);
 }

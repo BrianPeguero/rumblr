@@ -1,12 +1,16 @@
 <div class="main-container img">
   <div class="overlay">
-    <div class="container">
+    <div class="single-post-container">
       <div class="post-container">
-        <h1><%= @post.title %></h1>
+        <div class="user-info">
+          <% if @post.user.profile_pic.attached? %>
+              <%= image_tag @post.user.profile_pic, class: "user-pic" %>
+          <% end %>
+              <p class="user-name"><%= @post.user.name %></p>
+        </div>
         <hr>
+        <h1><%= @post.title %></h1>
         <h3><%= @post.body %></h3>
-
-        <%= link_to "dashboard", {controller: "user", action: "index"} %>
       </div>
     </div>
   </div>
